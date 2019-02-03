@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{float}
+\graphicspath{ {} }
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Ty Darnell}
+\lhead{Homework 3}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+\allowdisplaybreaks
+\begin{document}
+\begin{flushleft}
+
+	\section*{Problem 1}
+	
+\begin{multline*}\\
+P(max(X_1,X_2)>m)=1-P(X_1\leq m,X_2\leq m)\\
+\text{Since the Xs are iid we have:}\\
+=1-P(X_1\leq m)P(X_2\leq m)\\
+=1-P(X_1\leq m)^2\\
+=1-(1/2)^2=3/4\\
+\text{Generalizing this result:}\\
+P(max(X_1,\dots,X_n)\leq m)=1-P(X_i\leq m, \  i=1,\dots,n)\\
+=1-P(X_1)P(X_2\leq m)\cdots P(X_n\leq m)\\
+=1-[P(X_1\leq m)]^n=1-(1/2)^n\\
+\end{multline*}
+
+
+	\section*{Problem 2}
+	
+\begin{multline*}\\
+f_X(x)=\dfrac{1}{\theta} \quad 0<x<\theta \quad F_X(x)=\dfrac{1}{\theta}x\\
+\text{Let } U=X_{(1)} \quad V=X_{(n)}\\
+f_{U,V}(u,v)=\dfrac{n!}{(1-1)!(n-1-1)!(n-n)!}\dfrac{1}{\theta^2}[\dfrac{1}{\theta}u]^{1-1}[\dfrac{1}{\theta}(u-v)]^{n-1-1}[1-\dfrac{1}{\theta}v]^{n-n}\\
+f_{U,V}(u,v)=\dfrac{n(n-1)}{\theta^n}(v-u)^{n-2} \quad 0<u<v<\theta\\
+\text{Let } Z=U/V \quad W=V\\
+\text{Then } U=ZW \quad V=W\\
+0<z<1 (\text{since } u<v) \quad 0<w<\theta\\
+J=\begin{bmatrix}
+w&0\\
+z& 1
+\end{bmatrix}=|w|\\
+f_{Z,W}(z,w)=\dfrac{n(n-1)}{\theta^n}(w-zw)^{n-2}|w|\\
+=\dfrac{n(n-1)}{\theta^n}w^{n-2}(1-z)^{n-2}w\\
+f_{Z,W}(z,w)=\dfrac{n(n-1)}{\theta^n}w^{n-1}(1-z)^{n-2} \quad 0<z<1, \ 0<w<\theta\\
+\text{Since } f_{ZW} \text{ can be factored into } (f_Z)(f_W) \text{ they are independent}\\
+\text{Thus } \dfrac{X_{(1)}}{X_{(n)}} \text{ and } X_{(n)} \text{ are independent random variables}\\
+\end{multline*}
+
+
+	\section*{Problem 3}
+	
+\begin{enumerate}[(a)]
+	\item 
+	\begin{multline*}\\
+	\end{multline*}
+	\item 
+	\begin{multline*}\\
+	\end{multline*}
+
+\end{enumerate}
+
+	\section*{Problem 4}
+	
+\begin{enumerate}[(a)]
+	\item 
+\begin{multline*}\\
+\end{multline*}
+	\item 
+\begin{multline*}\\
+\end{multline*}
+
+\end{enumerate}
+
+	\section*{Problem 5}
+	
+\begin{enumerate}[(a)]
+	\item 
+	\begin{multline*}\\
+	\end{multline*}
+	\item 
+	\begin{multline*}\\
+	\end{multline*}
+	\item 
+	\begin{multline*}\\
+	\end{multline*}
+	\item 
+	\begin{multline*}\\
+	\end{multline*}
+	
+\end{enumerate}
+
+\end{flushleft}
+\end{document}
