@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{float}
+\graphicspath{ {} }
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{caption}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Ty Darnell}
+\lhead{MLE Notes}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+\newcommand{\cd}{\overset{d}{\to}}
+\newcommand{\cp}{\overset{p}{\to}}
+\newcommand{\B}{\beta}
+\newcommand{\e}{\epsilon}
+\newcommand{\limn}{\lim_{n\to \infty}}
+\newcommand{\lm}{\lambda}
+\newcommand{\sg}{\sigma}
+\newcommand{\hb}{\hat{\beta}}
+\newcommand{\sumn}{\sum_{i=1}^{n}}
+\newcommand{\hth}{\hat{\theta}}
+\newcommand{\lra}{\Leftrightarrow}
+\newcommand{\prodn}{\prod_{i=1}^{n}}
+\allowdisplaybreaks
+\begin{document}
+\section*{Successive 1-Dimensional Maximization}
+To maximize $L(\alpha,\B|x)$ over both $\alpha$ and $\B$:
+\begin{enumerate}
+\item Fix $\alpha$ maximize $L(\alpha,\B|x)$ over $\B$
+\item Let $\hat{\B}(\alpha)$ be the value of $\B$ that maxs $L(\alpha,\B|x)$ for fixed $\alpha$
+\item Profiled likelihood function for $\alpha$, $H(\alpha|x)=L(\alpha,\hat{\B}(\alpha)|x)$ depends on $\alpha$
+\item The MLE of $\B$ is $\hat{\B}(\hat{\alpha}_H)$ where $\hat{\alpha}_H$ maxs $H(\alpha|x)$
+\end{enumerate}
+\section*{Invariance Property of MLE}
+\textbf{Thm}: If $\hth$ is the MLE of $\theta$, then for any function $\tau(\theta)$, the MLE of $\tau(\theta)$ is $\tau(\hth)$\medbreak
+If mapping $\theta \to \tau(\theta)$ is one-to-one, letting $\eta=\tau(\theta)$, the MLE of $\eta$ is the same since:
+\begin{multline*}\\
+L^{*}(\eta|x)=\prodn f(x_i|\tau^{-1}(\eta))=L(\tau^{-1}(\eta|x))
+\text{ and}\\ \sup_{\eta}L^*(\eta|x)=\sup_{\eta}L(\tau^{-1}(\eta)|x)=\sup_{\theta}L(\theta|x)\\
+\end{multline*}
+\end{document}

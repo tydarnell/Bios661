@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{float}
+\graphicspath{ {} }
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{caption}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Ty Darnell}
+\lhead{661 Midterm 2 Notes}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}#1}}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+\newcommand{\cd}{\overset{d}{\to}}
+\newcommand{\cp}{\overset{p}{\to}}
+\newcommand{\B}{\beta}
+\newcommand{\e}{\epsilon}
+\newcommand{\limn}{\lim_{n\to \infty}}
+\newcommand{\lm}{\lambda}
+\newcommand{\sg}{\sigma}
+\newcommand{\hb}{\hat{\beta}}
+\newcommand{\sumn}{\sum_{i=1}^{n}}
+\newcommand{\hth}{\hat{\theta}}
+\newcommand{\lra}{\Leftrightarrow}
+\newcommand{\prodn}{\prod_{i=1}^{n}}
+\newcommand{\dll}[1]{\dfrac{\partial\ell}{\partial{#1}}}
+\newcommand{\mle}{\hat{\theta}_{MLE}}
+\newcommand{\mm}{\hat{\theta}_{MM}}
+\newcommand{\sumx}{\sum_{i=1}^{n}x_i}
+\newcommand{\ta}{\theta}
+\newcommand{\qe}{ \ ?\ }
+\newcommand{\dt}{\pderiv{}{\ta}}
+\newcommand{\lt}[1]{\log(f(#1|\ta))}
+\newcommand{\lx}{\lambda(x)}
+\allowdisplaybreaks
+\begin{document}
+\begin{flushleft}
+\textbf{Cauchy-Schwartz Inequality}\\
+$Cov(X,Y)\leq \sqrt{Var(X)Var(Y)}$\medbreak 
+Equivalently: $Var(X)\geq \dfrac{[Cov(X,Y)]^2}{Var(Y)}$\medbreak
+\textbf{CRLB}\\
+Let $X_1,\dots,X_n$ be a sample with pdf $f(x|\ta)$ and let $W(\bm{X})=W(X_1,\dots,X_n)$ be any unbiased estimator of $\tau(\ta)$ satisfying:\\
+$\pderiv{}{\ta}E(W(\bm{X}))=\int_{\chi}\pderiv{}{\ta}[W(\bm{x})f(\bm{x}|\ta)]\dx$\\
+and $Var(W(\bm{X}))<\infty$\\
+Then: $Var(W(\bm{X}))\geq \dfrac{\{\pderiv{\tau(\ta)}{\ta}\}^2}{E(U(\ta|\bm{x}))^2}$\\
+Where \textbf{score function} $U(\ta|\bm{x})=\pderiv{}{\ta}\log(f(\bm{x}|\ta))$\\
+\medbreak \textbf{Thm:} If W is the best unbiased estimator (UMVUE) for $\tau(\ta)$ then it is unique\\
+\[Var(W(\bm{X}))\geq \dfrac{\{\deriv{\ta}E(W(\bm{X})) \}^2 }{E\left[\{\pderiv{}{\ta}\log(f(\bm{X}|\ta)) \}^2 \right]}
+\]
+If $X_1,\dots,X_n$ are iid with pdf $f(x|\ta)$ then:
+\[Var(W(\bm{X}))\geq \dfrac{\{\deriv{\ta}E(W(\bm{X})) \}^2 }{nE\left[\{-\pderiv{^2}{\ta^2}\log(f(X_1|\ta)) \} \right]}
+\]
+Numerator is 1 if using $\ta$\medbreak
+Numerator is $\left(\dfrac{d\tau(\ta)}{d\ta} \right)^2$ if using $\tau(\ta)$\\
+\textbf{Rao-Blackwell Theorem}\\
+Let W be any unbiased estimator of $\tau(\ta)$, and let T be an SS for $\ta$.\\
+Define $\phi(T)=E(W|T)$\\
+Then $E(\phi(T))=\tau(\ta)$ and $Var(\phi(T))\leq Var(W)$ for all $\ta$ \medbreak 
+\textbf{Lehmann-Sheffe Theorem}\\
+W unbiased estimator of $\tau(\ta)$, T CSS for $\ta$. Then $\phi(T)=E(W|T)$ is the UMVUE for $\tau(\ta)$ and is unique\medbreak
+\textbf{LRT Statistic}: $\lx=\dfrac{L(\hth_0|x)}{L(\hth|x)}$\medbreak
+\textbf{Rejection Region}: $R=\{x:\lambda(x)\leq c\}$\\
+Want to find an equivalent region using unrestricted MLE $\hth$:\\
+$R=\{x:\lambda(x)\leq c\}\lra R^*=\{x:\hth\geq c^* \text{ or } \hth \leq c^* \}$\\
+$\hth\geq c^* \text{ or } \hth \leq c^*$ follows direction of $H_1$\\
+\end{flushleft}
+\end{document}

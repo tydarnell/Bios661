@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{float}
+\graphicspath{ {} }
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Ty Darnell}
+\lhead{661 Cheat Sheet 1}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+\newcommand{\cd}{\overset{d}{\to}}
+\newcommand{\cp}{\overset{p}{\to}}
+\newcommand{\B}{\beta}
+\newcommand{\e}{\epsilon}
+\newcommand{\limn}{\lim_{n\to \infty}}
+\newcommand{\lm}{\lambda}
+\allowdisplaybreaks
+\begin{document}
+\begin{flushleft}
+\section*{Random Samples}
+$S^2=\dfrac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2$\\
+\textbf{Computation formula} of $S^2$\\
+$(n-1)S^2=\sum_{i=1}^{n}X_i^2-\left(\sum_{i=1}^{n}X_i\right)^2/n$\\
+\textbf{Unbiased Estimator}\\
+If $ET(X_1,\dots,X_n)=\theta$ T is an unbiased estimator of $\theta$\\
+ex: if $E(X_1)=\mu$ and $Var(X_1)=\sigma^2$ \\
+Then $\bar{X}$ is unbiased estimator of $\mu$ and $S^2$ of $\sigma^2$\\
+\textbf{Samples From Normal Distribution}\\
+$X_1,\dots,X_n$ is a random sample from $N(\mu,\sigma^2)$\\
+Then $\bar{X}\sim N(\mu,\sigma^2/n)$\\
+\section*{Order Statistics}
+Sample Max:\\
+$F_{X_{(n)}}(x)=P(X_{(n)}\leq x)=P(X_1\leq x,\dots,X_n\leq x)=\{F(x)\}^n$\\
+If continuous:\\
+$f_{X_{(n)}}(x)=nf(x)\{F(x)\}^{n-1}$\\
+Sample Min:\\
+$F_{X_{(1)}}(x)=1-P(X_{(1)}\leq x)=P(X_1> x,\dots,X_n> x)=1-\{1-F(x)\}^n$\\
+If continuous:\\
+$f_{X_{(1)}}(x)=nf(x)\{1-F(x)\}^{n-1}$\\
+Joint pdf of order statistics:\\
+$f_{X_{(1)},\dots, X_{(n)}}(y_1,\dots,y_n)=n!\prod_{i=1}^{n}f_X(y_i)$ for $y_1<\dots<y_n$\\
+Distribution of $X_{(j)}$\\
+$f_{X_{(j)}}(x)=\dfrac{n!}{(i-1)!(n-1)!}f(x)\{F(x)\}^{j-1}\{1-F(x)\}^{n-j}$\\
+Joint Distribution of $(X_{(i)},X_{(j)})$\\
+$f_{X_{(i)},X_{(j)}}(u,v)=$\\
+$\dfrac{n!}{(j-1)!(j-i-1)!(n-j)!}f(u)f(v)\{F(u)\}^{i-1}\{F(v)-F(u)\}^{j-i-1}\{1-F(v)\}^{n-j}$\\
+\section*{Convergence}
+$\bar{X_n}=\dfrac{1}{n}\sum_{i=1}^{n}X_i$\\
+\textbf{Probability}\\
+WLLN\\
+Let $X_1,\dots,X_n$ be iid rv with $E(X_i)=\mu$ and $Var(X_i)=\sigma^2<\infty$
+Then for every $\e>0$\\
+$\limn P(|\bar{X_n}-\mu|<\e)=1$ which is the same as:\\
+$\limn P(|\bar{X_n}-\mu|\geq\e)=0$\\
+$\bar{X_n}\cp \mu$ (consistency of $\bar{X_n}$)\\
+Convergence in probability to a constant is the same as convergence in distribution to a constant\\
+\textbf{Distribution}\\
+$X_n\cd X$ as $n\to \infty$\\
+$\limn F_{X_n}(x)=F_X(x)$\\
+CLT\\
+Let $X_1,\dots,X_n$ be iid rv with $E(X_i)=\mu$ and $Var(X_i)=\sigma^2<\infty$\\
+Let $Z_n=\sqrt{n}(\bar{X_n}-\mu)/\sigma$\\
+Then $Z_n \cd N(0,1)$ as $n\to \infty$\\
+Or $Z_n=\sqrt{n}(\bar{X}-\mu)$\\
+Then $Z_n \cd N(0,\sigma^2)$ as $n\to \infty$\\
+$X_n\cp X \implies X_n \cd X$\\
+\textbf{Slutsky's Theorem}\\
+If $X_n\cd X$ and $Y_n \cp a$ Then:\\
+$Y_nX_n\cd aX \quad Y_n+X_n \cd a+X \quad X_n/Y_n \cd X/a$\\
+Slutsky's Thm allows substituting consistent estimators when proving $\cd$\\
+$X_n$ doesnt have to be independent of $Y_n$\\
+\textbf{Convergence of Transformed Sequences}\\
+If $X_n \cp X$ then $h(X_n)\cp h(X)$\\
+If $X_n \cd X$ then $h(X_n)\cd h(X)$\\
+$S_n^2\overset{a.s.}{\to } \sigma^2$ as $n\to \infty$\\
+\textbf{Delta Method}\\
+$\{T_n\}$ is a random sequence with $\sqrt{n}(T_n-\theta)\cd N(0,\sigma^2)$\\
+g is a function with $g^{'}(\theta)$ exists and not 0. Then:\\
+$\sqrt{n}\{g(T_n)-g(\theta)\}\cd N(0,\{g^{'}(\theta)\}^2\sigma^2)$\\
+$\theta$ is the asymptotic mean of $T_n$\\
+SSLN\\
+Same as WLLN but with $\overset{a.s.}{\to }$
+\section*{Data Reduction}
+\textbf{Sufficient Statistics}\\
+$T(X)$ is an SS for $\theta$ if $P(X=x|T(X)=t)$ does not depend on $\theta$\\
+$f(x|\theta)=h(x)c(\theta)\exp\left(\sum_{j=1}^{k}w_j(\theta)t_j(x)\right)$\\
+T(X)=$\left(\sum_{i=1}^{n}t_1(X_i),\dots ,\sum_{i=1}^{n}t_k(X_i)\right)$\\
+\textbf{Minimal SS}\\
+an SS is a minSS if it is a function of every other SS\\
+Any one to one tranformation of a min SS is also a min SS.\\
+Let $f(x|\theta)$ be joint pdf or pmf of X. Suppose $T(X)$ exists such that for every two sample points x and y:\\
+$f(x|\theta)/f(y|\theta)$ does not depend on $\theta$ $\iff T(x)=T(y)$\\
+Then $T(X)$ is a min SS for $\theta$\\
+\textbf{Ancillary Statistic} for $\theta$\\
+A statistic whose distribution does not depend on the parameter $\theta$\\
+\textbf{Complete Statistic}\\
+Completeness means that $E(g(T))\neq 0$ (except for 0 function)\\
+Complete if can be written as exponential family\\
+For our purposes an SS is complete only if it is minimal.\\
+\textbf{Basu's Theorem}\\
+If $T(X)$ is a complete and minimally sufficient statistic, then $T(X)$ is independent of every ancillary statistic\\
+\section*{Other Stuff}
+Exponential CDF $1-e^{-\lambda x}$\\
+$E(X) = E(E(X|Y))$\\
+$\Gamma(n) = (n-1)\Gamma(n-1)$\\
+$\Gamma(n)=(n-1)!$ (n is an whole number)\\
+$Var(X) = E(X^2) - E(X)]^2$\\
+$Var(X) = E[(X - \mu)^2]$\\
+Law of total variance $(Var(Y) = E(Var(Y|X)) + Var(E(Y|X)))$\\
+$\lim_{n\to \infty } (1-x/n)^n=e^{-x}$\\
+$P(a < X < b) = F_x(b) - F_x(a)$\\
+$\B(\alpha,\B)=\dfrac{\Gamma(\alpha)\Gamma(\B)}{\Gamma(\alpha+\B)}$\\
+Conditional Probability\\
+$P\{Y=y|X=x\}=\dfrac{P(X=x,Y=y)}{P(X=x)}$\\
+$=\dfrac{f_{X,Y}(x,y)}{f_X(x)}$\\
+Convolution\\
+$X\bot Y$\\
+$Z=X+Y$\\
+$f_Z(z)=\int_{-\infty}^{\infty}f_X(z-y)f_Y(y) \ dy$\\
+$\Gamma(1/2)=\sqrt{\pi}$\\
+$\Gamma(\alpha)=\int_{0}^{\infty}t^{\alpha-1}e^{-t} \ dt$\\
+\end{flushleft}
+\end{document}
