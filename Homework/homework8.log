@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6745 64-bit) (preloaded format=pdflatex 2018.8.25)  30 MAR 2019 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6745 64-bit) (preloaded format=pdflatex 2018.8.25)  1 APR 2019 13:35
 entering extended mode
 **./homework8.tex
 (homework8.tex
@@ -432,7 +432,7 @@ Overfull \hbox (20.5699pt too wide) detected at line 210
  []
 
 [6]
-Overfull \hbox (13.86311pt too wide) detected at line 241
+Overfull \hbox (13.86311pt too wide) detected at line 240
  []$[][]\OML/cmm/m/it/10 R \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10
  x \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/
 cmr/m/n/10 ) \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 c\OMS/cmsy/m/n/10 g[]\OML/cmm/
@@ -442,7 +442,7 @@ MS/cmsy/m/n/10 g[]$
  []
 
 
-Overfull \hbox (25.36769pt too wide) detected at line 241
+Overfull \hbox (25.36769pt too wide) detected at line 240
  []$[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 :
  \OML/cmm/m/it/10 x[] \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 [] \OMS/cmsy/m/n/10 
    []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 c\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =n[]
@@ -452,7 +452,7 @@ x[] < []\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/1
 ML/cmm/m/it/10 =n[]x[] < []\OMS/cmsy/m/n/10 g$ 
  []
 
-[7] [8] (homework8.aux) ) 
+[7] [8] [9] (homework8.aux) ) 
 Here is how much of TeX's memory you used:
  5700 strings out of 492973
  86175 string characters out of 3126692
@@ -461,24 +461,25 @@ Here is how much of TeX's memory you used:
  8701 words of font info for 33 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,13n,43p,818b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/tydar/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/tydar/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/t
-ydar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b><C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmi5.pfb><C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmmi7.pfb><C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/tydar/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/tydar/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/tydar/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/U
-sers/tydar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y10.pfb><C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmsy7.pfb>
-Output written on homework8.pdf (8 pages, 148799 bytes).
+<C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/tydar/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/tydar/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Use
+rs/tydar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb><C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi5.pfb><C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb><C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/tydar/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/tydar/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/ty
+dar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><
+C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb><C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy5.pfb><C:/Users/tydar/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on homework8.pdf (9 pages, 159476 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 84 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

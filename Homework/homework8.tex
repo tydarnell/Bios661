@@ -178,7 +178,7 @@ L(\ta|y)=\prodn \dfrac{e^{-\ta x_i}(\ta x_i)^{y_i}}{y_i!}\\
 =-\ta\sumx+\sumn y_i\log(\ta)+\sumn y_i\log(x_i) -\sumn \log(y_i!)\\
 \dll{\ta}=-\sumx+\dfrac{\sumn y_i}{\ta}=0\\
 \sumx=\dfrac{\sumn y_i}{\ta}\\
-\mle=\dfrac{\sumn y_i}{\sumx}
+\mle=\dfrac{\sumn y_i}{\sumx}\\
 \dll{\ta^2}^2=-\dfrac{\sumn y_i}{\ta^2}<0\\
 \text{Thus } \hth \text{ is the MLE}\\
 E(\hth)=\dfrac{1}{\sumx}E(\sumn y_i)=\dfrac{1}{\sumx}\sumn E(y_i)=\dfrac{\ta\sumx}{\sumx}=\ta \text{ (unbiased)}\\
@@ -236,24 +236,37 @@ H_0:\ta=\ta_0 \quad H_1:\ta\neq \ta_0\\
 R=\{x:\lx \leq c \}=\{x:\exp(-n(x_{(1)}-\ta_0))\leq c \text{ or } x_{(1)}<\ta_0 \}\\
 =\{x:x_{(1)}-\ta_0 \geq -\log(c)/n  \text{ or } x_{(1)}<\ta_0\}=\{x:x_{(1)} \geq \ta_0-\log(c)/n  \text{ or } x_{1}<\ta_0\}\\
 c^*=\ta_0-\log(c)/n\\
-R^*=\{x:x_{(1)}\geq c^* \text{ or } x_{(1)}<\ta_0 \}\\
-\text{Thus }R \text{ and } R^* \text{ are equivalent}\\
+R^*=\{x:x_{(1)}\geq c^* \text{ or } x_{(1)}<\ta_0 \} \text{ Thus }R \text{ and } R^* \text{ are equivalent}\\
 \end{multline*}
 
 	\item 
 \begin{multline*}\\
 \alpha=\sup_{\ta \in \Theta}P(\bm{X}\in R^*|H_0)\\
 \alpha=P(\lx\leq c|\ta=\ta_0)\\
-=P(x_{(1)}\geq c^*  \text{ or } x_{1}<\ta_0|\ta=\ta_0)\\
-=P(x_{(1)}\geq c^*|\ta=\ta_0)+P(x_{1}<\ta_0|\ta=\ta_0)\\
-\alpha/2=P(x_{(1)}\geq c^*|\ta=\ta_0)\\
-f_{x_{(1)}}(x)=n(f_x)[1-F_X]^{n-1}\\
-F_X=e^\ta-e^{-x+\ta}\\
-n(e^{-x+\ta})[1-e^\ta+e^{-x+\ta}]^{n-1}\\
+=P(x_{(1)}\geq c^*  \text{ or } x_{(1)}<\ta_0|\ta=\ta_0)\\
+=P(x_{(1)}\geq c^*|\ta=\ta_0)+P(x_{(1)}<\ta_0|\ta=\ta_0)\\
+P(x_{1}<\ta_0|\ta=\ta_0)=0\\
+\alpha=P(x_{(1)}\geq c^*|\ta=\ta_0)\\
+F(x|\ta)=\int_{\ta}^{x} e^{-(t-\ta)} dt=1-e^{-(x-\ta)}\\
+f_{x_{(1)}}(x)=\dfrac{n!}{(n-1)!}e^{-(x-\ta)}[e^{-(x-\ta)}]^{n-1}\\
+=ne^{-n(x-\ta)}, x>\ta\\
+\alpha=P(x_{(1)}\geq c^*|\ta=\ta_0)\\
+=\int_{c^*}^{\infty}ne^{-n(x-\ta_0)} \dx=\bigg|_{c^*}^{\infty}-e^{-n(x-\ta_0)}\\
+\alpha=e^{-n(c^*-\ta_0)}\\
+\dfrac{\log(\alpha)}{-n}=c^*-\ta_0\\
+c^*=-\dfrac{\log(\alpha)}{n}+\ta_0\\
 \end{multline*}
 
 	\item 
 \begin{multline*}\\
+R^*=\{x:x_{(1)}\geq \ta_0-\dfrac{\log(\alpha)}{n} \text{ or } x_{(1)}<\ta_0 \}\\
+\B(\ta)=P\left(x_{(1)}\geq \ta_0-\dfrac{\log(\alpha)}{n} \text{ or } x_{(1)}<\ta_0|\ta \in \Theta\right)\\
+P\left(x_{(1)}\geq \ta_0-\dfrac{\log(\alpha)}{n} |\ta\geq \ta_0\right)+P(x_{(1)}\leq \ta_0|\ta\geq \ta_0)\\
+=P\left(x_{(1)}\geq \ta_0-\dfrac{\log(\alpha)}{n} |\ta\geq \ta_0\right)+0\\
+=\exp\left(-n(\ta_0-\log(\alpha)/n-\ta)\right) \text{ (increasing function of } \ta)\\
+\exp\left(-n(\ta_0-\log(\alpha)/n-\ta)\right)+P(x_{(1)}\leq \ta_0|\ta<\ta_0)\\
+=\exp\left(-n(\ta_0-\log(\alpha)/n-\ta)\right)+1-\exp\left(-n(\ta_0-\ta)\right)\\
+=-\exp\left(-n(\ta_0-\ta)\right)(1-\alpha)+1 \text{ (decreasing function of } \ta)\\
 \end{multline*}
 	
 \end{enumerate}
